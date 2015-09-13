@@ -12,7 +12,7 @@
 
 (defn handler [request]
   (cond
-    (= "/info" (:uri request)) {:status 200 :body "info"}
+    (= "/info" (:uri request)) (handle-dump request)
     :default {:status 404 :body "not found"}))
 
 (def app
